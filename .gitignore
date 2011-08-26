@@ -10,4 +10,5 @@ TestResults
 
 # settings
 *.user
+*.suo
 
