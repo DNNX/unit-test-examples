@@ -1,0 +1,19 @@
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:plain_spec) do |t|
+  t.pattern = 'spec/calculator_plain_spec.rb'
+end
+
+RSpec::Core::RakeTask.new(:dynamic_spec) do |t|
+  t.pattern = 'spec/calculator_dynamic_spec.rb'
+end
+
+require "cucumber/rake/task"
+Cucumber::Rake::Task.new(:feature)
+
+task :all_specs => [:plain_spec, :dynamic_spec]
+task :default => [:all_specs, :feature]
+
+
+
+
